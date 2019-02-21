@@ -21,7 +21,7 @@ public class DefaultUnleashConfiguration {
     public Unleash unleash(
             @Value("${APP_NAME:}") String appName,
             @Value("${NAIS_APP_NAME:}") String naisAppName,
-            @Value("${UNLEASH_API_URL}") String unleashApiUrl,
+            @Value("${unleash.api.url}") String unleashApiUrl,
             Strategy... strategies) {
         UnleashConfig config = UnleashConfig.builder()
                 .appName(naisAppName != null ? naisAppName : appName)

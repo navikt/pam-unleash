@@ -8,7 +8,7 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * Requires @Value("${UNLEASH_API_URL}") to be resolveable, unless EnableUnleash#fakeUnleash is true
+ * Requires @Value("${unleash.api.url}") to be resolveable, unless EnableUnleash#fakeUnleash is true
  */
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.TYPE)

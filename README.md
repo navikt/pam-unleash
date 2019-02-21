@@ -77,7 +77,7 @@ It is also possible to initialize a fake unleash for use locally or when testing
 Using the IsNotProd strategy requires either the `NAIS_CLUSTER_NAME` or `FASIT_ENVIRONMENT_NAME`
 environment variables to be present unleass you supply them manually.
  
-Unless you're using `fake = true`, you also need `${UNLEASH_API_URL}` (add this to your config) and either 
+Unless you're using `fake = true`, you also need `${unleash.api.url}` (add this to your config) and either 
 `${APP_NAME}` (should be provided when deploying with naisd) or 
 `${NAIS_APP_NAME}` (should be provided when deploying with naiserator) 
 to be resolveable in the environment. 
