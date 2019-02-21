@@ -6,7 +6,7 @@
     <parent>
         <groupId>no.nav.pam.unleash</groupId>
         <artifactId>pam-unleash-support</artifactId>
-        <version>2</version>
+        <version>3-SNAPSHOT</version>
     </parent>
     <packaging>jar</packaging>
 
@@ -18,7 +18,7 @@
         <dependency>
             <groupId>no.nav.pam.unleash</groupId>
             <artifactId>pam-unleash</artifactId>
-            <version>2</version>
+            <version>3-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>org.springframework</groupId>
