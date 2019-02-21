@@ -1,6 +1,6 @@
 # Unleash support
 
-Library tha simplifies unleash usage and reduces the amount of code needed to use 
+Library that simplifies unleash usage and reduces the amount of code needed to use 
 [Unleash](https://github.com/Unleash/unleash) feature toggles. Should make it 
 easier to test feature toggled code, as well as cleaning up
 toggles, because there are less dependencies passed around in client code
@@ -35,7 +35,7 @@ void initializeUnleash() {
 }
 ```
 
-Using toggles should can now be reduced an import statement and the lines where unleash is
+Using toggles can now be reduced to an import statement and the lines where unleash is
 used
 
 Example when testing if a toggle is disabled (given that
