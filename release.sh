@@ -31,8 +31,9 @@ echo "-- Commit and tag release version .."
 git config user.email github-action@users.noreply.github.com
 git config user.name 'Github Action'
 git remote set-url origin "https://${GITHUB_ACTOR}:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+git checkout master
 
-git commit -am "Set project version to $RELEASE_VERSION"
+git commit -am "Set project version to $RELEASE_VERSION for release"
 #git push -q origin
 git tag -f "release-$RELEASE_VERSION"
 #git push -q --tags origin
@@ -41,5 +42,5 @@ echo "-- Bump to next development version $NEXT_SNAPSHOT_VERSION .."
 mvn -B versions:set -DnewVersion="$NEXT_SNAPSHOT_VERSION" -DgenerateBackupPoms=false
 
 echo "-- Commit next development version .."
-git commit -am "Set project version to $NEXT_SNAPSHOT_VERSION"
+git commit -am "Set next project version to $NEXT_SNAPSHOT_VERSION"
 #git push -q origin
