@@ -3,9 +3,9 @@
 # The last (in a dotted version scheme) or only version number will be incremeted by one.
 set -e
 
-test "$GITHUB_TOKEN" || { echo "Error: env-var GITHUB_TOKEN not set"; exit 1; }
-test "$GITHUB_ACTOR" || { echo "Error: env-var GITHUB_ACTOR not set"; exit 1; }
-test "$GITHUB_REPOSITORY" || { echo "Error: env-var GITHUB_REPOSITORY not set"; exit 1; }
+test "$GITHUB_TOKEN" || { echo "Error: env var GITHUB_TOKEN not set"; exit 1; }
+test "$GITHUB_ACTOR" || { echo "Error: env var GITHUB_ACTOR not set"; exit 1; }
+test "$GITHUB_REPOSITORY" || { echo "Error: env var GITHUB_REPOSITORY not set"; exit 1; }
 
 PROJECT_VERSION=$(mvn -B -q help:evaluate -Dexpression=project.version -DforceStdout=true)
 RELEASE_VERSION=${PROJECT_VERSION%-SNAPSHOT}
@@ -28,6 +28,8 @@ mvn -B --settings maven-settings.xml clean deploy -Dmaven.wagon.http.pool=false
 
 
 echo "-- Commit and tag release version .."
+git config user.email github-action@users.noreply.github.com
+git config user.name 'Github Action'
 git remote set-url origin "https://${GITHUB_ACTOR}:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
 
 git commit -am "Set project version to $RELEASE_VERSION"
