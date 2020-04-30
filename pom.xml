@@ -4,7 +4,7 @@
 
     <groupId>no.nav.pam.unleash</groupId>
     <artifactId>pam-unleash-support</artifactId>
-    <version>6.3-SNAPSHOT</version>
+    <version>6.3</version>
     <packaging>pom</packaging>
 
     <properties>
