@@ -1,5 +1,7 @@
 # Unleash support
 
+![Release (Github Package Registry)](https://github.com/navikt/pam-unleash/workflows/Release%20(Github%20Package%20Registry)/badge.svg)
+
 Library that simplifies unleash usage and reduces the amount of code needed to use 
 [Unleash](https://github.com/Unleash/unleash) feature toggles. Should make it 
 easier to test feature toggled code, as well as cleaning up
