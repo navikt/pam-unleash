@@ -35,7 +35,7 @@ git checkout master
 
 git commit -am "Set project version to $RELEASE_VERSION for release"
 git push -q origin
-git tag -f "release-$RELEASE_VERSION"
+git tag -f -a -m "Release $RELEASE_VERSION" "$RELEASE_VERSION"
 git push -q --tags origin
 
 echo "-- Bump to next development version $NEXT_SNAPSHOT_VERSION .."
