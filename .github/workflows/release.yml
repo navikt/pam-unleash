@@ -3,8 +3,12 @@ name: Release (Github Package Registry)
 on:
   push:
     branches:
-    - 'master'
-
+      - 'master'
+    paths-ignore:
+      - "README.md"
+      - ".gitignore"
+      - "LICENCE.md"
+      - "CODEOWNERS"
 jobs:
   release:
     runs-on: ubuntu-latest
