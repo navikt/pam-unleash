@@ -8,7 +8,7 @@ import java.util.Map;
 
 public class IsNotProdStrategy implements Strategy {
 
-    private static final List<String> DEFAULT_PROD_ENVIRONMENTS = Arrays.asList( "prod-sbs", "prod-fss", "p");
+    private static final List<String> DEFAULT_PROD_ENVIRONMENTS = Arrays.asList("prod-sbs", "prod-fss", "p", "prod-gcp");
 
     private final boolean isProd;
 
