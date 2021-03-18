@@ -13,7 +13,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 class ConfigurationTest {
 
-    @EnableUnleash(fakeUnleash = true)
+    @EnableUnleash(fakeUnleash = true, enabledFakeToggles = {"featureFoo"})
     @Configuration
     static class DummyTestConfiguration {
 
@@ -31,6 +31,15 @@ class ConfigurationTest {
 
         ApplicationContext context = new AnnotationConfigApplicationContext(DummyTestConfiguration.class);
         assertThat(context.getBean(Unleash.class)).isInstanceOf(FakeUnleash.class);
+    }
+
+    @Test
+    void that_fake_configuration_enabled_toggles_is_honored() {
+
+        ApplicationContext context = new AnnotationConfigApplicationContext(DummyTestConfiguration.class);
+        Unleash unleash = context.getBean(Unleash.class);
+        assertThat(unleash.isEnabled("featureFoo")).isTrue();
+        assertThat(unleash.isEnabled("featureBar")).isFalse();
     }
 
     @Test
